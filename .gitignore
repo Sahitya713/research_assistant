@@ -1,0 +1,157 @@
+# ============================================
+# Python (FastAPI backend)
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+develop-eggs/
+downloads/
+sdist/
+wheels/
+pip-wheel-metadata/
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Test / coverage / type-check caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment files (keep templates like .env.example committed)
+.env
+.env.*
+!.env.example
+
+# Alembic / local DB files
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================
+# Node / Next.js (frontend)
+# ============================================
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.npm
+.eslintcache
+*.tsbuildinfo
+next-env.d.ts
+
+# Next.js build output
+.next/
+out/
+
+# Storybook / misc build output
+storybook-static/
+
+# Vercel
+.vercel
+
+# Turbo
+.turbo/
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Test coverage (JS)
+coverage/
+
+# Playwright / Cypress
+test-results/
+playwright-report/
+playwright/.cache/
+cypress/videos/
+cypress/screenshots/
+
+# ============================================
+# Logs & runtime files
+# ============================================
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ============================================
+# OS files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ============================================
+# IDE / editor files
+# ============================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# Claude Code local settings
+# ============================================
+.claude/settings.local.json
+CLAUDE.local.md
+
+# ============================================
+# Secrets & credentials (never commit)
+# ============================================
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.json
+credentials.json

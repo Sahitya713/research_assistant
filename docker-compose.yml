@@ -1,0 +1,32 @@
+services:
+  backend:
+    build: ./backend
+    image: research-assistant-backend:latest
+    ports:
+      - "8000:8000"
+    environment:
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:?Set OPENROUTER_API_KEY in your shell or a root .env file}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-openai/gpt-oss-120b}
+      OPENALEX_MAILTO: ${OPENALEX_MAILTO:-}
+      FRONTEND_ORIGIN: http://localhost:${FRONTEND_PORT:-3000}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=4)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        # Browsers call the backend directly, so this is the host-facing URL.
+        NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
+    image: research-assistant-frontend:latest
+    ports:
+      - "${FRONTEND_PORT:-3000}:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
